@@ -1,0 +1,25 @@
+#include <iostream>
+#define size 100
+using namespace std;
+
+int zbir(int broj) {
+    if (broj == 0)
+        return 0;
+    if (broj % 10 < 5)
+        return broj % 10 + zbir(broj / 10);
+    else
+        return zbir(broj / 10);
+}
+
+int main() {
+    int n, a;
+
+    cin >> n;
+
+    for (int i = 0; i < n; ++i) {
+        cin >> a;
+        cout << zbir(a) << endl;
+    }
+
+    return 0;
+}
